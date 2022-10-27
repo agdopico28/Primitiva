@@ -16,10 +16,12 @@ public class Block {
             }
 
         }
+        Arrays.sort(numbers);
     }
 
     public Block (int... numbers) {
         this.numbers = numbers;
+        Arrays.sort(this.numbers);
     }
 
     private boolean isRepeateNumbers(int number){
@@ -42,13 +44,19 @@ public class Block {
         for (int i = 0; i < numbers.length; i++){
             numbers[i] = 0;
         }
+
     }
 
     @Override
     public String toString() {
-
-        return Arrays.toString(numbers);
+        String s = "" + numbers[0];
+        for (int i = 1; i < numbers.length; i++){
+            s += ", " + numbers[i];
+        }
+        return s;
     }
 
-
+    public int[] getNumbers() {
+        return numbers;
+    }
 }
